@@ -1,14 +1,15 @@
 using UnityEngine;
 
 public class BirdScript : MonoBehaviour
+
+    // We can change aspects of a gameObject and it's components using C# coding.
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    // Any code that runs as soon as the script is enabled. Ony runs single time.
     void Start()
     {
-        
     }
 
-    // Update is called once per frame
+    // Any code that runs constantly while script is enabled.
     void Update()
     {
         
