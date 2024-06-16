@@ -10,10 +10,11 @@ public class BirdScript : MonoBehaviour
 {
     // We are going to create the references up here.
 
+    // RigidBody2D makes the object a physics object with gravity.
     // Creating a slot to have the rigidbody2d component.
     // We need to give a specific name so that we can to the specific Rigidbody2D component.
     // Becuase we made this public we can access this 
-    public Rigidbody2D myRigidBody2D;
+    public Rigidbody2D myRigidBody;
 
     // Any code that runs as soon as the script is enabled. Ony runs single time.
     void Start()
@@ -23,10 +24,18 @@ public class BirdScript : MonoBehaviour
     // Any code that runs constantly while script is enabled.
     void Update()
     {
-        // Changing the properties of the rigidbody (like velocity)
-        // We are going to change the posictions using vectors (x,y)
-        // Vector.up will increase the y from 1 (0,1)
-        // We can multiply the value to create more values 
-        myRigidBody2D.velocity = Vector2.up * 10;
+        // Any code in the update section will run over and over again every frame
+        // We need to use a if condition execute some code if the game meets
+        // We need to Vector2.up only if the user hits the spacebar.
+        if (Input.GetKeyDown(KeyCode.Space) == true)
+        {
+            // Changing the properties of the rigidbody (like velocity)
+            // We are going to change the posictions using vectors (x,y)
+            // Vector.up will increase the y from 1 (0,1)
+            // We can multiply the value to create more values 
+            myRigidBody.velocity = Vector2.up * 10;
+        }
+
+      
     }
 }
