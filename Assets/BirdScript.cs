@@ -34,8 +34,8 @@ public class BirdScript : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space) == true)
         {
             // Changing the properties of the rigidbody (like velocity)
-            // We are going to change the posictions using vectors (x,y)
-            // Vector.up will increase the y from 1 (0,1)
+            // We are going to change the positions using vectors (x,y) -> Vector2
+            // Vector2.up will increase the y from 1 (0,1)
             // We can multiply the value to create more values (flapStrength = Multiplier)
             myRigidBody.velocity = Vector2.up * flapStrength;
         }
