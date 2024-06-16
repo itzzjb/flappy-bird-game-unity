@@ -16,7 +16,7 @@ public class BirdScript : MonoBehaviour
     // Becuase we made this public we can access this 
     public Rigidbody2D myRigidBody;
 
-    // We are going to create a variables so we can easily change the value of these fields using the Unity UI
+    // We are going to create a variables so we can easily change the value of these fields using the Unity UI's inspector section
     public float flapStrength;
 
     // Any code that runs as soon as the script is enabled. Ony runs single time.
