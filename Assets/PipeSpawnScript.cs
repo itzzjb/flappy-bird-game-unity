@@ -7,6 +7,10 @@ using UnityEngine;
 
 public class PipeSpawnScript : MonoBehaviour
 {
+
+    // First we need to create a reference to the prefab
+    public GameObject pipe;
+
     void Start()
     {
         
@@ -14,6 +18,6 @@ public class PipeSpawnScript : MonoBehaviour
 
     void Update()
     {
-        
+        // We are 
     }
 }

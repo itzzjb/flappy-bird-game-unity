@@ -19,7 +19,7 @@ public class PipeMovesScript : MonoBehaviour
         // We are going to change the positions using vectors (x,y,z) -> Vector3
         // Vector2.left will decrease the  from 1 (-1,0,0)
         // We can multiply the value to create more values (moveSpeed = Multiplier)
-        transform.position = transform.position + (Vector3.left * moveSpeed);
-
+        // By multiplying by Time.deltaTime, it ensures that 
+        transform.position = transform.position + (Vector3.left * moveSpeed) * Time.deltaTime;
     }
 }
