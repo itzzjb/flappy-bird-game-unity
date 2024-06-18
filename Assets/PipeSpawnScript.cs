@@ -22,7 +22,8 @@ public class PipeSpawnScript : MonoBehaviour
 
     void Start()
     {
-        
+        // Calling the SpawnPipe function
+        SpawnPipe();
     }
 
     void Update()
@@ -36,11 +37,20 @@ public class PipeSpawnScript : MonoBehaviour
         }
         else
         {
-            // We can use the following method to spawn game objects
-            // By using transform.postion and transform. rotation we are using the same position and the rotation as the spawner
-            Instantiate(pipe, transform.position, transform.rotation);
+            // Calling the SpawnPipe function
+            SpawnPipe();
             // When the timer is equal to spawn rate it will be reset to 0
             timer = 0;
         }
+    }
+
+    // We need to use the spawn code in both Start() and Update()
+    // It is not a good idea to duplicate the same code in multiple places
+    // So we are going to create a new function for that
+    void SpawnPipe()
+    {
+        // We can use the following method to spawn game objects
+        // By using transform.postion and transform. rotation we are using the same position and the rotation as the spawner
+        Instantiate(pipe, transform.position, transform.rotation);
     }
 }
