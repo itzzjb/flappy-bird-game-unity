@@ -30,6 +30,12 @@ public class PipeMovesScript : MonoBehaviour
         // When the pipe reaches that x value it will be deleted
         if (transform.position.x < deadZone)
         {
+
+            // We can maintain a debug log.
+            // When pipes are deleted a message will get logged.
+            // We can view the logs from the console section of Unity. ( Tab next to Project)
+            Debug.Log("A Pipe Got Deleted.");
+
             // Destoying the pipe that was created using this template
             Destroy(gameObject);
         }
