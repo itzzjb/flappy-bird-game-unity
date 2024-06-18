@@ -20,6 +20,10 @@ public class PipeSpawnScript : MonoBehaviour
     // We can make this private becuase we won't be changing this in the editor or anywhere else
     private float timer = 0;
 
+    // We want to make the x value of the pipes to be the same and Y values to change when spawing relative to the spawner
+    // For that we are going to create height offset variabe
+    public float heightOffset = 10;
+
     void Start()
     {
         // Calling the SpawnPipe function
@@ -49,8 +53,17 @@ public class PipeSpawnScript : MonoBehaviour
     // So we are going to create a new function for that
     void SpawnPipe()
     {
+        // We are making some variables inside the function because only need to use them within the function
+        // And also we will be able to set a value to that using a calculation
+        float lowestPoint = transform.position.y - heightOffset;
+        float highestPoint = transform.position.y + heightOffset;
+
         // We can use the following method to spawn game objects
-        // By using transform.postion and transform. rotation we are using the same position and the rotation as the spawner
-        Instantiate(pipe, transform.position, transform.rotation);
+        // We are creating a new 3 dimentional verctor (new Vector3)
+        // We are having the same x value as the spawner
+        // A random Y value between the lowestPoint and the highestPoint
+        // Then 0 for z value
+        // By using transform.rotation we are using the same rotation as the spawner 
+        Instantiate(pipe, new Vector3(transform.position.x, Random.Range(lowestPoint, highestPoint) ,0), transform.rotation);
     }
 }
