@@ -22,6 +22,11 @@ public class BirdScript : MonoBehaviour
     // Creating a reference to the Logic Script
     public LogicScript logic;
 
+    // We need to kill the bird when it collids with the pipe.
+    // Other wise even the Game Over Screen popped up you will be able to play the game in the background
+    // We are using a boolean variable for that
+    public bool birdIsAlive = true;
+
     // Any code that runs as soon as the script is enabled. Ony runs single time.
     void Start()
     {
@@ -38,7 +43,9 @@ public class BirdScript : MonoBehaviour
         // Any code in the update section will run over and over again every frame
         // We need to use a if condition execute some code if the game meets
         // We need to Vector2.up only if the user hits the spacebar.
-        if (Input.GetKeyDown(KeyCode.Space) == true)
+        // We are also going to check whether the bird is alive here
+        // So when the bird is dead it won't be able to fly using the spacebar.
+        if (Input.GetKeyDown(KeyCode.Space) == true && birdIsAlive == true)
         {
             // Changing the properties of the rigidbody (like velocity)
             // We are going to change the positions using vectors (x,y) -> Vector2
@@ -55,5 +62,7 @@ public class BirdScript : MonoBehaviour
     {
         // When the bird object collide with something (pipes) we are going to trigger the gameOver function
         logic.gameOver();
+        // We are going to kill the bird when it collides
+        birdIsAlive = false;
     }
 }
