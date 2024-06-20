@@ -17,6 +17,10 @@ public class LogicScript : MonoBehaviour
     // We need to reference the Text UI component inorder to do changes to it via the script
     public Text scoreText;
 
+    // We need to reference the Game Over Screen game object.
+    // We need to drag and drop the disabled object to this field from Unity UI
+    public GameObject gameOverScreen;
+
     // We can use the following lines to try out a function from Unity UI itself
     [ContextMenu("Increase Score")]
 
@@ -41,5 +45,17 @@ public class LogicScript : MonoBehaviour
         // Here they are requesting a name of a scene ( filename )
         // But because we want the current scene we can simply type the following
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
+
+    // We can use the following lines to try out a function from Unity UI itself
+    [ContextMenu("Game Over Screen")]
+
+    // We only need to show the Game Over screen only when a bird hits into a pipe
+    // First we need to disable the GameOver screen from the Unity UI
+    // We are going to create a public function for gameOver()
+    public void gameOver()
+    {
+        // The Game Over Screen object will be enabled (Appears) when the gameOver() function is triggered.
+        gameOverScreen.SetActive(true);
     }
 }

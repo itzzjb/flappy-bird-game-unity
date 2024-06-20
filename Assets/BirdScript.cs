@@ -19,10 +19,17 @@ public class BirdScript : MonoBehaviour
     // We are going to create a variables so we can easily change the value of these fields using the Unity UI's inspector section
     public float flapStrength;
 
+    // Creating a reference to the Logic Script
+    public LogicScript logic;
+
     // Any code that runs as soon as the script is enabled. Ony runs single time.
     void Start()
     {
-
+        // As soon as a new pipe spawns it will look through the hierarchy to find a game object with the tag "Logic"
+        // Then it will look through the object's components to find the script of the class LogicScript
+        // And if it finds one if will put that in our reference slot
+        // It does the exact same thing as dragging and dropping to the slot
+        logic = GameObject.FindGameObjectWithTag("Logic").GetComponent<LogicScript>();
     }
 
     // Any code that runs constantly while script is enabled.
@@ -41,5 +48,12 @@ public class BirdScript : MonoBehaviour
         }
 
       
+    }
+
+    // Similar to the trigger code in the middle gameObject in pipes we are going to create the following funtion
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        // When the bird object collide with something (pipes) we are going to trigger the gameOver function
+        logic.gameOver();
     }
 }
