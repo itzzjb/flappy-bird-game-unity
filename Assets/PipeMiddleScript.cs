@@ -33,7 +33,13 @@ public class PipeMiddleScript : MonoBehaviour
     // There are more funtions like OnTriggerExit and OnTriggerStay too
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        // Calling the addScore function in the LogicScript
-        logic.addScore();
+        // We need to check whether the coliding object is actually the bird object
+        // For that we are going to create new layer called Bird (Layer 3) in the Bird object
+        if(collision.gameObject.layer == 3)
+        {
+            // Calling the addScore function in the LogicScript
+            logic.addScore(1);
+        }
+
     }
 }

@@ -20,11 +20,11 @@ public class LogicScript : MonoBehaviour
 
     // Now we are making a function to add score
     // Because we are going to run this function from other scripts we are setting it to public void
-    public void addScore()
+    public void addScore(int scoreToAdd)
     {
         // This function needs to do tw things
         // 1. Add 1 to the player's score
-        playerScore = playerScore + 1;
+        playerScore = playerScore + scoreToAdd;
         // 2. Then change the Text on the UI
         // We need to transform the int into a string
         scoreText.text = playerScore.ToString();
