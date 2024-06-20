@@ -1,6 +1,8 @@
 using UnityEngine;
 // We need to use the UnityEngine.UI to get additional functionalities like
 using UnityEngine.UI;
+// We need to use the UnityEngine.SceneManagement to get additional functionalities to manage scences like restarting
+using UnityEngine.SceneManagement;
 
 public class LogicScript : MonoBehaviour
 {
@@ -28,5 +30,13 @@ public class LogicScript : MonoBehaviour
         // 2. Then change the Text on the UI
         // We need to transform the int into a string
         scoreText.text = playerScore.ToString();
+    }
+
+
+    // Button's OnClick() event let's us call a public function from a script
+    // So we are going to write the restartGame() funtion here
+    public void restartGame()
+    {
+        // Here we're going to write the code to restart the scene
     }
 }
