@@ -38,5 +38,8 @@ public class LogicScript : MonoBehaviour
     public void restartGame()
     {
         // Here we're going to write the code to restart the scene
+        // Here they are requesting a name of a scene ( filename )
+        // But because we want the current scene we can simply type the following
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 }
