@@ -33,7 +33,7 @@ public class LogicScript : MonoBehaviour
         playerScore = playerScore + scoreToAdd;
         // 2. Then change the Text on the UI
         // We need to transform the int into a string
-        scoreText.text = playerScore.ToString();
+        scoreText.text = " " + playerScore.ToString();
     }
 
 
