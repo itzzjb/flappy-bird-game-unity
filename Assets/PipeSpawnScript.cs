@@ -3,7 +3,7 @@ using UnityEngine;
 // We dragged and dropped the previously created pipe object to the Assets
 // This created a prefabricated game object or prefab
 // This is like a blueprint for a game object
-// We can create new version of this entire game object with all of it's children , components and properties.
+// We can create new version of this entire game object with all of its children , components and properties.
 
 public class PipeSpawnScript : MonoBehaviour
 {
@@ -17,11 +17,11 @@ public class PipeSpawnScript : MonoBehaviour
     public float spawnRate = 2;
 
     // Number that counts up (time)
-    // We can make this private becuase we won't be changing this in the editor or anywhere else
+    // We can make this private because we won't be changing this in the editor or anywhere else
     private float timer = 0;
 
-    // We want to make the x value of the pipes to be the same and Y values to change when spawing relative to the spawner
-    // For that we are going to create height offset variabe
+    // We want to make the x value of the pipes to be the same and Y values to change when sawing relative to the spawner
+    // For that we are going to create height offset variable
     public float heightOffset = 10;
 
     void Start()
@@ -32,7 +32,7 @@ public class PipeSpawnScript : MonoBehaviour
 
     void Update()
     {
-        // We are going to use a if condition to 
+        // We are going to use an if condition to 
 
         if (timer < spawnRate)
         {
@@ -59,7 +59,7 @@ public class PipeSpawnScript : MonoBehaviour
         float highestPoint = transform.position.y + heightOffset;
 
         // We can use the following method to spawn game objects
-        // We are creating a new 3 dimentional verctor (new Vector3)
+        // We are creating a new 3-dimensional vector (new Vector3)
         // We are having the same x value as the spawner
         // A random Y value between the lowestPoint and the highestPoint
         // Then 0 for z value

@@ -9,9 +9,9 @@ public class PipeMovesScript : MonoBehaviour
     // We can give a default value for the variable and change the value from the UI if needed
     public float moveSpeed = 5;
 
-    // When new and new pipes gets created from the pipeSpawner they will be there until the aplication is stopped.
-    // So even after we can't see the pipe from the displa it will continuesly using resources of the device
-    // We can define a deadzone by giving a x value (When the pipe reaches that x value it will be deleted)
+    // When new and new pipes gets created from the pipeSpawner they will be there until the application is stopped.
+    // So even after we can't see the pipe from the display it will continuously use resources of the device
+    // We can define a dead zone by giving an x value (When the pipe reaches that x value it will be deleted)
     public float deadZone = -45;
 
     void Start()
@@ -22,7 +22,7 @@ public class PipeMovesScript : MonoBehaviour
     void Update()
     {
         // We are going to change the positions using vectors (x,y,z) -> Vector3
-        // Vector2.left will decrease the  from 1 (-1,0,0)
+        // Vector2.left will decrease the  form 1 (-1,0,0)
         // We can multiply the value to create more values (moveSpeed = Multiplier)
         // By multiplying by Time.deltaTime, it ensures that 
         transform.position = transform.position + (Vector3.left * moveSpeed) * Time.deltaTime;
@@ -36,7 +36,7 @@ public class PipeMovesScript : MonoBehaviour
             // We can view the logs from the console section of Unity. ( Tab next to Project)
             Debug.Log("A Pipe Got Deleted.");
 
-            // Destoying the pipe that was created using this template
+            // Destroying the pipe that was created using this template
             Destroy(gameObject);
         }
     }
